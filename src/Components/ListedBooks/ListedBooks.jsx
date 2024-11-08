@@ -4,6 +4,7 @@ import { getReadListFromLS } from "../../localStorage/localStorage";
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Book from "../Book/Book";
+import { Helmet } from "react-helmet-async";
 
 const ListedBooks = () => {
   const [readList,setReadList] = useState([]);
@@ -20,6 +21,9 @@ const ListedBooks = () => {
   
   return (
     <div>
+      <Helmet>
+        <title>Listed Books | Book Vibes</title>
+      </Helmet>
       <Tabs>
         <TabList>
           <Tab>Listed Books</Tab>

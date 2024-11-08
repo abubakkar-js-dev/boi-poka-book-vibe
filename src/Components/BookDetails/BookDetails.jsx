@@ -2,6 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { addReadListToLS } from "../../localStorage/localStorage";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const BookDetails = () => {
   const { bookId } = useParams();
@@ -16,6 +17,9 @@ const BookDetails = () => {
   }
   return (
     <div className="flex bg-white  p-6 container">
+      <Helmet>
+        <title>{bookName} | Book Vibes</title>
+      </Helmet>
       {/* Book Cover */}
       <div className="w-1/2 flex justify-center items-center bg-black/5 p-16 rounded-2xl">
         <img
